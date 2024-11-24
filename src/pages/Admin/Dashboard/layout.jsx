@@ -2,7 +2,7 @@ import React from "react";
 import "@/styles/globals.css";
 import { Sidebar } from "./sidebar.jsx";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils.js";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const Layout = ({ children }) => {
