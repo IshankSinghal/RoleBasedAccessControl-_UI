@@ -4,11 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Label } from "@/components/ui/label";
 
 const Home = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   return (
     <div className="min-h-screen w-full bg-zinc-950 overflow-x-hidden lg:w-screen">
@@ -58,12 +58,12 @@ const Home = () => {
                 {isLogin ? (
                   <>
                     Don't have an account?{" "}
-                    <button
+                    <Button
                       onClick={() => setIsLogin(false)}
                       className="text-[#5D4AA8] hover:underline"
                     >
                       Sign Up
-                    </button>
+                    </Button>
                   </>
                 ) : (
                   <>
@@ -83,10 +83,10 @@ const Home = () => {
             <div className="space-y-4 m-5 w-full px-10">
               {isLogin ? (
                 // Log In Form
-                <form className="space-y-4">
+                <form className="space-y-6">
                   <input
-                    type="email"
-                    placeholder="Email"
+                    type="text"
+                    placeholder="Enter your email or username"
                     className="w-full bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-400 px-4 py-3 rounded-lg"
                   />
                   <div className="space-y-4 ">
@@ -114,6 +114,37 @@ const Home = () => {
                       </Button>
                     </div>
                   </div>
+
+                  {/* Toggle for Admin Login */}
+                  <div className="space-y-4 m-1">
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        id="admin-login"
+                        aria-label="Login as Admin"
+                        className="border-zinc-800 data-[state=checked]:bg-[#5D4AA8] data-[state=checked]:border-[#5D4AA8]"
+                        onChange={() => setIsAdmin(!isAdmin)}
+                      />
+                      <label
+                        htmlFor="admin-login"
+                        className="text-sm text-zinc-300 hover:text-white transition-colors"
+                      >
+                        Login as Admin
+                      </label>
+                    </div>
+
+                    {/* Admin Login Fields */}
+                    {isAdmin && (
+                      <div className="space-y-2">
+                        <Input
+                          id="admin-key"
+                          type="text"
+                          placeholder="Enter Admin Key"
+                          className="w-full bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-400 px-4 py-3 rounded-lg"
+                        />
+                      </div>
+                    )}
+                  </div>
                   <button className="w-full py-3 bg-[#5D4AA8] hover:bg-[#5D4AA8]/90 text-white font-medium rounded-lg">
                     Log In
                   </button>
@@ -123,11 +154,11 @@ const Home = () => {
                 <form className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <input
-                      placeholder="First name"
+                      placeholder="Full name"
                       className="bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-400 px-4 py-3 rounded-lg"
                     />
                     <input
-                      placeholder="Last name"
+                      placeholder="Username"
                       className="bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-400 px-4 py-3 rounded-lg"
                     />
                   </div>
@@ -162,7 +193,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-4 m-1">
                     <input
                       type="checkbox"
                       id="terms"
@@ -214,11 +245,11 @@ const Home = () => {
                     fill="#FBBC05"
                   />
                   <path
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    d="M12 4.62c1.13 0 2.09.39 2.83 1.04l2.1-2.1C15.63 2.33 14.07 1.5 12 1.5c-4.3 0-7.98 2.47-9.38 5.93l2.85 2.24c.87-2.6 3.3-4.53 6.16-4.53z"
                     fill="#EA4335"
                   />
                 </svg>
-                <span>Google</span>
+                <span>Sign in with Google</span>
               </button>
             </div>
           </div>
