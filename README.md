@@ -6,7 +6,7 @@ This is a Role-Based Access Control (RBAC) User Interface designed to evaluate c
 The platform allows administrators to monitor threats, manage security incidents, and access various security-related modules in an intuitive and user-friendly interface.
 
 
-## Key Features
+## 🚀Key Features
 
 ### 1. Dashboard
 
@@ -31,7 +31,7 @@ The platform allows administrators to monitor threats, manage security incidents
 - Ensures usability across devices with a clean and modern UI.
 
 
-## Installation
+## 📦Installation
 
 ### Prerequisites
 
@@ -42,26 +42,27 @@ Ensure you have the following installed:
 
 ### Setup
 
-- Clone the repository-
-```bash
-  git clone https://github.com/IshankSinghal/RoleBasedAccessControl-_UI.git  
-```
-- Navigate to the project directory:
+1. Clone the repository-
+>```bash
+>  git clone https://github.com/IshankSinghal/RoleBasedAccessControl-_UI.git  
+>```
+2. Navigate to the project directory:
 
-```bash
-  cd RoleBasedAccessControl-_UI
-```
-- Install dependencies:
-```bash
-  npm install
-```
+>```bash
+>  cd RoleBasedAccessControl-_UI
+>```
 
-- Start the development server:
-```bash
-  npm run dev
-```
+3. Install dependencies:
+>```bash
+>  npm install
+>```
+
+4. Start the development server:
+>```bash
+>  npm run dev
+>```
     
-## Tech Stack
+## 🛠️Tech Stack
 
 - **React.js**: For building the user interface.
 
@@ -75,7 +76,7 @@ Ensure you have the following installed:
 
 
 
-## Customization
+## 🛠️Customization
 - **Add New Roles**: Modify the role logic in the authentication and RBAC logic files.
 - **Update Menu Items**: Edit the mainMenuItems array in Sidebar.jsx to add or remove navigation links.
 - **Styling**: Update styles in globals.css or customize Tailwind classes in component files.
@@ -91,7 +92,7 @@ Ensure you have the following installed:
 - **Multi-Language Support**: Provide translations for global users.
 
 
-## Contact
+## 🤝Contact
 
 - **Developer**: Ishank Singhal
 - **Email**: singhalishank004@gmail.com
